@@ -1,0 +1,37 @@
+.text-responsive h2 {
+   font-size: 2rem; /* Default size */
+}
+
+.text-responsive p {
+   font-size: 1rem; /* Default size */
+}
+
+.text-responsive span {
+   font-size: 1rem; /* Default size */
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 768px) {
+   .text-responsive h3 {
+      font-size: 1.5rem;
+   }
+
+   .text-responsive p {
+      font-size: 0.9rem;
+   }
+}
+
+/* Responsif untuk layar sangat kecil */
+@media (max-width: 576px) {
+   .text-responsive h2 {
+      font-size: 1rem;
+   }
+
+   .text-responsive span {
+      font-size: 1px;
+   }
+
+   .text-responsive p {
+      font-size: 0.8rem;
+   }
+}
