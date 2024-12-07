@@ -1,0 +1,15 @@
+/* src/styles/custom.css */
+.custom-button {
+   padding: 10px 20px;
+   background-color: rgb(106, 151, 151);
+   color: white;
+   border: none;
+   border-radius: 5px;
+   cursor: pointer;
+   transition: background-color 0.3s ease, transform 0.3s ease; /* Animasi hover */
+}
+
+.custom-button:hover {
+   background-color: rgb(28, 129, 129);
+   transform: scale(1.07);
+}
