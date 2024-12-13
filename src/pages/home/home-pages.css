@@ -10,6 +10,17 @@
    font-size: 1rem; /* Default size */
 }
 
+.carousel-item {
+   position: relative; /* Ensure the item is the reference for absolute positioning */
+   height: 200px; /* Set a height for the carousel item */
+}
+
+.carousel-caption {
+   background-color: #f8f9fa;
+   border-radius: 10px;
+   padding: 40px;
+}
+
 /* Responsif untuk layar kecil */
 @media (max-width: 768px) {
    .text-responsive h3 {

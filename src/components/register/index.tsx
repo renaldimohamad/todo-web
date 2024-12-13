@@ -3,9 +3,9 @@ import {RegisterForm} from "../../pages/auth/register"
 
 export const Register = ({setShowNavbar}: any) => {
    useEffect(() => {
-      setShowNavbar(false) // Menyembunyikan navbar saat login
+      setShowNavbar(false)
       return () => {
-         setShowNavbar(true) // Mengembalikan navbar saat keluar dari login
+         setShowNavbar(true)
       }
    }, [setShowNavbar])
 

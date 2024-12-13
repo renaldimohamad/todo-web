@@ -10,13 +10,12 @@ body {
 .nav-todo {
    color: rgb(106, 151, 151);
    font-weight: bold;
-   font-size: 18px;
+   font-size: 25px;
+   font-style: italic;
 }
 
-.nav-list {
-   color: #ffdb3c;
-   font-weight: bold;
-   font-size: 18px;
+.header-text {
+   font-size: 10px;
 }
 
 .nav {

@@ -3,9 +3,9 @@ import {LoginForm} from "../../pages/auth/login"
 
 export const Login = ({setShowNavbar}: any) => {
    useEffect(() => {
-      setShowNavbar(false) // Menyembunyikan navbar saat login
+      setShowNavbar(false)
       return () => {
-         setShowNavbar(true) // Mengembalikan navbar saat keluar dari login
+         setShowNavbar(true)
       }
    }, [setShowNavbar])
 

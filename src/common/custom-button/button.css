@@ -1,3 +1,9 @@
+.custom-button-login {
+   color: gray;
+   background-color: #f8f9fa;
+   border-radius: 5px;
+   border: none;
+}
 /* src/styles/custom.css */
 .custom-button {
    padding: 10px 20px;
@@ -7,6 +13,13 @@
    border-radius: 5px;
    cursor: pointer;
    transition: background-color 0.3s ease, transform 0.3s ease; /* Animasi hover */
+}
+
+.custom-button-login:hover {
+   background-color: rgb(28, 129, 129);
+   padding: 8px 20px;
+   border-radius: 5px;
+   transform: scale(1.07);
 }
 
 .custom-button:hover {
