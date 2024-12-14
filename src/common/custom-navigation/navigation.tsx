@@ -3,7 +3,7 @@ import Navbar from "react-bootstrap/Navbar"
 import {CustomButton} from "../custom-button/button"
 import todoLogo from "/src/assets/images/todo-photo.png"
 import "./navigation.css"
-import {Button, NavbarBrand} from "react-bootstrap"
+import {NavbarBrand} from "react-bootstrap"
 import useStore from "../../stores/hook"
 
 const Navigation = () => {
