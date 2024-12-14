@@ -6,6 +6,7 @@ interface CustomButtonProps {
    customtext: string
    path?: string
    className?: string
+   type?: "button" | "submit" | "reset"
    onClick?: () => void
 }
 
@@ -13,6 +14,7 @@ export const CustomButton = ({
    customtext,
    path,
    className,
+   type = "button",
    onClick,
 }: CustomButtonProps) => {
    const navigate = useNavigate()
@@ -27,7 +29,7 @@ export const CustomButton = ({
    }
 
    return (
-      <Button className={className} onClick={handleClick}>
+      <Button className={className} type={type} onClick={handleClick}>
          <p className="m-0">{customtext}</p>
       </Button>
    )
