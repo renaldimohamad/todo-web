@@ -2,7 +2,7 @@ import {Carousel, Container} from "react-bootstrap"
 import "./home-pages.css"
 import {CustomButton} from "../../common/custom-button/button"
 import useStore from "../../stores/hook"
-import {Navigate, redirect} from "react-router-dom"
+import {Navigate} from "react-router-dom"
 
 export const HomePages = () => {
    const {isLogin} = useStore()
