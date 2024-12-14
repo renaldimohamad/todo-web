@@ -1,6 +1,6 @@
 import {Navigate} from "react-router-dom"
 import useStore from "../../stores/hook"
-import {Todo} from "../../pages/todo"
+import {PostTodo} from "../../pages/posts/post-todo"
 
 export const Index = () => {
    const {isLogin} = useStore()
@@ -11,7 +11,9 @@ export const Index = () => {
 
    return (
       <>
-         <Todo />
+         <div className="container mt-4">
+            <PostTodo />
+         </div>
       </>
    )
 }
