@@ -6,7 +6,7 @@ export interface IStoreState {
 
 export interface IStoreAction {
    setUser: (user: IUser) => void
-   getPosts: () => Promise<void>
+   getPosts: (id: number) => Promise<void>
    clearUser: () => void
    isDarkMode: boolean
    toggleTheme: () => void
@@ -18,4 +18,4 @@ export interface IUser {
    email: String
 }
 
-export type TStore = IStoreState & IStoreAction
+export type TStore = IStoreState & IStoreAction & IPostActions

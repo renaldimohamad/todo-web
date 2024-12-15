@@ -3,17 +3,15 @@ import useStore from "../../stores/hook"
 import {PostTodo} from "../../pages/posts/post-todo"
 
 export const Index = () => {
-   const {isLogin} = useStore()
-
+   const {isLogin, } = useStore()
+ 
    if (!isLogin) {
       return <Navigate to={"/"} />
    }
 
    return (
-      <>
-         <div className="container mt-4">
-            <PostTodo />
-         </div>
-      </>
+      <div className="mt-4">
+         <PostTodo />
+      </div>
    )
 }

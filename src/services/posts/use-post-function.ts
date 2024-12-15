@@ -11,9 +11,9 @@ export const usePostFunction = () => {
       }
    }
 
-   const getAllpost = async () => {
+   const getAllpost = async (userId: number) => {
       try {
-         const res = await PostAsync.getAllpost()
+         const res = await PostAsync.getAllpost(userId)
 
          return res
       } catch (error) {
@@ -21,5 +21,46 @@ export const usePostFunction = () => {
       }
    }
 
-   return {createPost, getAllpost}
+   const getAllPostsByUserId = (userId: number) => {
+      try {
+         const res = PostAsync.getAllpost(userId)
+
+         return res
+      } catch (error) {
+         console.log("🚀 ~ getAllPostsByUserId ~ error:", error)
+         return error
+      }
+   }
+
+   // const getPostById = async (userId: number) => {
+   //    try {
+   //       const res = await PostAsync.getPostById(userId)
+
+   //       return res.data
+   //    } catch (error) {
+   //       console.log("🚀 ~ getAllPostsByUserId ~ error:", error)
+   //    }
+   // }
+
+   const updatePost = async (id: number, body: IPostForm) => {
+      try {
+         const res = await PostAsync.updatePost(id, body)
+
+         return res
+      } catch (error) {
+         console.log("🚀 ~ updatePost ~ error:", error)
+      }
+   }
+
+   const removePost = async (id: number) => {
+      try {
+         const res = await PostAsync.removePost(id)
+
+         return res
+      } catch (error) {
+         console.log("🚀 ~ removePost ~ error:", error)
+      }
+   }
+
+   return {createPost, getAllpost, updatePost, removePost, getAllPostsByUserId}
 }

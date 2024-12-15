@@ -6,10 +6,15 @@ export const createPost = async (body: IPostForm) => {
    return res.data
 }
 
-export const getAllpost = async () => {
-   const res = await api.get("/posts")
+export const getAllpost = async (userId: number) => {
+   const res = await api.get(`/posts/${userId}`)
 
    return res.data
+}
+
+export const getUserById = async (userId: number) => {
+   const response = await api.get(`/users/${userId}`)
+   return response.data
 }
 
 export const getPostById = async (id: number) => {
