@@ -1,4 +1,5 @@
 export interface IPostForm {
+   id: number
    content: string
 }
 
