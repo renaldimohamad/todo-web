@@ -32,15 +32,16 @@ export const usePostFunction = () => {
       }
    }
 
-   // const getPostById = async (userId: number) => {
-   //    try {
-   //       const res = await PostAsync.getPostById(userId)
+   const markPostAsRead = (id: number) => {
+      try {
+         const res = PostAsync.markPostAsRead(id)
 
-   //       return res.data
-   //    } catch (error) {
-   //       console.log("🚀 ~ getAllPostsByUserId ~ error:", error)
-   //    }
-   // }
+         return res
+      } catch (error) {
+         console.log("🚀 ~ markPostAsRead ~ error:", error)
+         return error
+      }
+   }
 
    const updatePost = async (id: number, body: IPostForm) => {
       try {
@@ -62,5 +63,12 @@ export const usePostFunction = () => {
       }
    }
 
-   return {createPost, getAllpost, updatePost, removePost, getAllPostsByUserId}
+   return {
+      createPost,
+      getAllpost,
+      updatePost,
+      removePost,
+      getAllPostsByUserId,
+      markPostAsRead,
+   }
 }
