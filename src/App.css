@@ -38,6 +38,32 @@ body {
    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
+.custom-input-with-button {
+   width: 100%;
+   padding-right: 80px;
+   height: 45px;
+   border-radius: 5px;
+   font-size: 16px;
+   border-radius: 0;
+}
+
+.custom-button-inside-input {
+   position: absolute;
+   right: 12px;
+   padding: 11px 20px;
+   border: none;
+   border-radius: 0;
+   margin-top: 1px;
+   background-color: rgb(106, 151, 151);
+   color: #fff;
+   cursor: pointer;
+   font-size: 14px;
+}
+
+.custom-button-inside-input:hover {
+   background-color: #0056b3;
+}
+
 .button-register:hover {
    background-color: rgb(28, 129, 129);
 }

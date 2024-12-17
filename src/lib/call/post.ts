@@ -17,8 +17,8 @@ export const getUserById = async (userId: number) => {
    return response.data
 }
 
-export const markPostAsRead = async (id: number) => {
-   const res = await api.patch(`/posts/${id}/read`)
+export const toggleReadStatus = async (id: number) => {
+   const res = await api.put(`/posts/${id}/toggle-read`)
 
    return res.data
 }

@@ -3,7 +3,7 @@ import {CustomButton} from "../../common/custom-button/button"
 import CustomInput from "../../common/custom-input"
 import {usePostValidation} from "../../services/posts/use-post-validation"
 import {usePostFunction} from "../../services/posts/use-post-function"
-import {IPostForm} from "../../services/types/post"
+import {IPostForm, IPostModel} from "../../services/types/post"
 import {Controller} from "react-hook-form"
 import {useEffect, useState} from "react"
 import useStore from "../../stores/hook"
@@ -22,7 +22,7 @@ export const PostTodo = () => {
    const postFunc = usePostFunction()
    const {user} = useStore()
    const [updatedPost, setUpdatedPost] = useState<number | null>(null)
-   const [posts, setPosts] = useState<IPostForm[]>([])
+   const [posts, setPosts] = useState<IPostModel[]>([])
    const inputRef = useRef<HTMLInputElement>(null)
 
    const fetchPosts = async () => {
@@ -68,16 +68,17 @@ export const PostTodo = () => {
       console.log("🚀 ~ onError ~ errors:", errors)
    }
 
-   const handleMarkAsRead = async (id: number) => {
+   const handleToggleReadStatus = async (id: number) => {
       try {
-         await postFunc.markPostAsRead(id)
+         const updatedPost = await postFunc.toggleReadStatus(id)
+
          setPosts((prevPosts) =>
             prevPosts.map((post) =>
-               post.id === id ? {...post, isRead: true} : post
+               post.id === id ? {...post, isRead: updatedPost.isRead} : post
             )
          )
       } catch (error) {
-         console.error("Error marking post as read:", error)
+         console.error("Error toggling read status:", error)
       }
    }
 
@@ -129,7 +130,7 @@ export const PostTodo = () => {
                   <ListGroup variant="flush" className="text-center mt-3">
                      <ListGroup.Item
                         style={{
-                           color: " rgb(106, 151, 151)",
+                           color: " red",
                            fontWeight: "bold",
                         }}
                      >
@@ -151,7 +152,7 @@ export const PostTodo = () => {
                                           label=""
                                           checked={post.isRead}
                                           onChange={() =>
-                                             handleMarkAsRead(post.id)
+                                             handleToggleReadStatus(post.id)
                                           }
                                        />
                                        <span
@@ -168,7 +169,7 @@ export const PostTodo = () => {
                                     <div className="d-flex gap-2 justify-content-end">
                                        <FaEdit
                                           onClick={() => onEdit(post)}
-                                          className="icons-edit me-1"
+                                          className="icons-edit me-2"
                                           size={18}
                                        />
 

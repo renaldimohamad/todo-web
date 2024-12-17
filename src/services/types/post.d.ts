@@ -1,5 +1,4 @@
 export interface IPostForm {
-   id: number
    content: string
 }
 
@@ -7,6 +6,7 @@ export interface IPostModel {
    id: number
    author: IAuthor
    content: string
+   isRead: Boolean
    createdAt: string
 }
 

@@ -1,18 +1,18 @@
 .text-responsive h2 {
-   font-size: 2rem; /* Default size */
+   font-size: 2rem;
 }
 
 .text-responsive p {
-   font-size: 1rem; /* Default size */
+   font-size: 1rem;
 }
 
 .text-responsive span {
-   font-size: 1rem; /* Default size */
+   font-size: 1rem;
 }
 
 .carousel-item {
-   position: relative; /* Ensure the item is the reference for absolute positioning */
-   height: 200px; /* Set a height for the carousel item */
+   position: relative;
+   height: 200px;
 }
 
 .carousel-caption {
@@ -21,7 +21,6 @@
    padding: 40px;
 }
 
-/* Responsif untuk layar kecil */
 @media (max-width: 768px) {
    .text-responsive h3 {
       font-size: 1.5rem;
@@ -32,7 +31,6 @@
    }
 }
 
-/* Responsif untuk layar sangat kecil */
 @media (max-width: 576px) {
    .text-responsive h2 {
       font-size: 1rem;

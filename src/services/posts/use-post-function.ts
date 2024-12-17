@@ -1,5 +1,5 @@
 import * as PostAsync from "../../lib/call/post"
-import {IPostForm} from "../types/post"
+import {IPostForm, IPostModel} from "../types/post"
 
 export const usePostFunction = () => {
    const createPost = async (body: IPostForm) => {
@@ -32,14 +32,14 @@ export const usePostFunction = () => {
       }
    }
 
-   const markPostAsRead = (id: number) => {
+   const toggleReadStatus = (id: number): Promise<IPostModel> => {
       try {
-         const res = PostAsync.markPostAsRead(id)
+         const res = PostAsync.toggleReadStatus(id)
 
          return res
       } catch (error) {
-         console.log("🚀 ~ markPostAsRead ~ error:", error)
-         return error
+         console.log("🚀 ~ toggleReadStatus ~ error:", error)
+         throw error
       }
    }
 
@@ -69,6 +69,7 @@ export const usePostFunction = () => {
       updatePost,
       removePost,
       getAllPostsByUserId,
-      markPostAsRead,
+      toggleReadStatus,
+      // markPostAsRead,
    }
 }

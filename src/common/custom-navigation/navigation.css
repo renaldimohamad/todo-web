@@ -4,20 +4,20 @@
 }
 
 .todo-logo {
-   width: 40px; /* Atur ukuran logo */
+   width: 40px;
    height: auto;
 }
 
 .nav-todo-wrapper {
-   font-size: 1.5rem; /* Atur ukuran teks */
+   font-size: 1.5rem;
    font-weight: bold;
    display: flex;
    align-items: center;
-   gap: 0.3rem; /* Spasi antara elemen */
+   gap: 0.3rem;
 }
 
 @media (max-width: 576px) {
    .nav-todo-wrapper {
-      font-size: 1.2rem; /* Kurangi ukuran font untuk layar kecil */
+      font-size: 1.2rem;
    }
 }

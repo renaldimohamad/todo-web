@@ -13,7 +13,6 @@ const Navigation = () => {
       <div>
          <Navbar expand="lg" className="bg-body-tertiary">
             <Container className="d-flex justify-content-between align-items-center">
-               {/* Kiri: Logo dan Nama Aplikasi */}
                <div className="d-flex align-items-center">
                   <img src={todoLogo} alt="todo-logo" className="todo-logo" />
 
@@ -26,12 +25,10 @@ const Navigation = () => {
                   </NavbarBrand>
                </div>
 
-               {/* Kanan: Tombol */}
                <Navbar.Toggle aria-controls="basic-navbar-nav" />
                <Navbar.Collapse className="justify-content-end ">
                   {isLogin ? (
                      <>
-                        {/* <Button onClick={() => clearUser()}>log out</Button> */}
                         <CustomButton
                            customtext={"Log Out"}
                            className="custom-button-login me-3 rounded-5"
