@@ -5,9 +5,10 @@ export const usePostFunction = () => {
    const createPost = async (body: IPostForm) => {
       try {
          const res = await PostAsync.createPost(body)
-         console.log("🚀 ~ createPost ~ res:", res)
-      } catch (error) {
-         console.log("🚀 ~ createPost ~ error:", error)
+         
+         return res
+      } catch (error: any) {
+         throw new Error(error)
       }
    }
 
@@ -16,8 +17,8 @@ export const usePostFunction = () => {
          const res = await PostAsync.getAllpost(userId)
 
          return res
-      } catch (error) {
-         console.log("🚀 ~ getAllpost ~ error:", error)
+      } catch (error: any) {
+         throw new Error(error)
       }
    }
 
@@ -26,9 +27,8 @@ export const usePostFunction = () => {
          const res = PostAsync.getAllpost(userId)
 
          return res
-      } catch (error) {
-         console.log("🚀 ~ getAllPostsByUserId ~ error:", error)
-         return error
+      } catch (error: any) {
+         throw new Error(error)
       }
    }
 
@@ -37,9 +37,8 @@ export const usePostFunction = () => {
          const res = PostAsync.toggleReadStatus(id)
 
          return res
-      } catch (error) {
-         console.log("🚀 ~ toggleReadStatus ~ error:", error)
-         throw error
+      } catch (error: any) {
+         throw new Error(error)
       }
    }
 
@@ -48,8 +47,8 @@ export const usePostFunction = () => {
          const res = await PostAsync.updatePost(id, body)
 
          return res
-      } catch (error) {
-         console.log("🚀 ~ updatePost ~ error:", error)
+      } catch (error: any) {
+        throw new Error(error)
       }
    }
 
@@ -58,8 +57,8 @@ export const usePostFunction = () => {
          const res = await PostAsync.removePost(id)
 
          return res
-      } catch (error) {
-         console.log("🚀 ~ removePost ~ error:", error)
+      } catch (error: any) {
+        throw new Error(error)
       }
    }
 
@@ -70,6 +69,5 @@ export const usePostFunction = () => {
       removePost,
       getAllPostsByUserId,
       toggleReadStatus,
-      // markPostAsRead,
    }
 }

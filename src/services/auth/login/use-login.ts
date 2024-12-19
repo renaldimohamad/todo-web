@@ -12,7 +12,8 @@ export const useLogin = () => {
       password: yup
          .string()
          .required("Password is required")
-         .max(6, "The password must be a maximum of 6 characters"),
+         .max(6, "The password must be a maximum of 6 characters")
+         .max(50, "The password must be a maximum of 50 characters"),
    })
 
    const initialValues = {

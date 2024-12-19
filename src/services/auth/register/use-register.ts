@@ -16,7 +16,8 @@ export const useRegister = () => {
       password: yup
          .string()
          .required("Password is required")
-         .min(6, "Password must be at least 6 characters"),
+         .min(6, "Password must be at least 6 characters")
+         .max(50, "Password must be at most 6 characters"),
    })
 
    return useForm<IRegisterForm>({

@@ -49,7 +49,6 @@ export const RegisterForm = () => {
 
          reset()
       } catch (error: any) {
-         console.log("🚀 ~ handleSubmitForm ~ error:", error)
          setAlert({
             show: true,
             message: error.message || "User already exists.",
