@@ -29,8 +29,8 @@ export const PostTodo = () => {
       try {
          const res = await postFunc.getAllpost(user.id)
          setPosts(res)
-      } catch (error) {
-         console.error("Error fetching posts:", error)
+      } catch (error: any) {
+         throw new Error(error)
       }
    }
 
@@ -65,7 +65,7 @@ export const PostTodo = () => {
    }
 
    const onError = (errors: any) => {
-      console.log("🚀 ~ onError ~ errors:", errors)
+      throw new Error(errors)
    }
 
    const handleToggleReadStatus = async (id: number) => {
@@ -77,8 +77,8 @@ export const PostTodo = () => {
                post.id === id ? {...post, isRead: updatedPost.isRead} : post
             )
          )
-      } catch (error) {
-         console.error("Error toggling read status:", error)
+      } catch (error: any) {
+         throw new Error(error)
       }
    }
 
@@ -100,7 +100,7 @@ export const PostTodo = () => {
                               render={({field}) => (
                                  <div className="d-flex flex-column w-100">
                                     <CustomInput
-                                       placeholder="Enter your todo"
+                                       placeholder="What do you want to achieve today?"
                                        type="text"
                                        className="custom-input-with-button"
                                        {...field}
@@ -148,6 +148,7 @@ export const PostTodo = () => {
                                  <div className="d-flex justify-content-between align-items-center">
                                     <div className="d-flex flex-row gap-2">
                                        <FormCheck
+                                          className="custom-checkbox"
                                           type="checkbox"
                                           label=""
                                           checked={post.isRead}

@@ -2,17 +2,27 @@ import {useEffect, useState} from "react"
 import {Navigate} from "react-router-dom"
 import useStore from "../../stores/hook"
 import {PostTodo} from "../../pages/posts/post-todo"
-import {Card, Col} from "react-bootstrap"
+import {Alert, Card, Col} from "react-bootstrap"
 import "./todo.css"
 
 export const Index = () => {
    const {isLogin, user} = useStore()
-   const [showUserName, setShowUserName] = useState(true)
+   const [alert, setAlert] = useState({
+      show: false,
+      message: "",
+      variant: "",
+   })
 
    useEffect(() => {
+      setAlert({
+         show: true,
+         message: `Welcome ${user.userName}`,
+         variant: "success",
+      })
+
       const timer = setTimeout(() => {
-         setShowUserName(false)
-      }, 3000)
+         setAlert({...alert, show: false})
+      }, 5000)
 
       return () => clearTimeout(timer)
    }, [])
@@ -25,13 +35,15 @@ export const Index = () => {
       <div className="mt-5">
          <div className="d-flex flex-column justify-content-center align-items-center gap-3">
             <div className="d-flex gap-2 align-items-center ">
-               {showUserName && (
-                  <span className="font-weight-bold fs-4">
-                     {" "}
-                     Welcome {""}
-                     {user.userName}
-                  </span>
-               )}{" "}
+               {alert.show && (
+                  <Alert
+                     variant={alert.variant}
+                     onClose={() => setAlert({...alert, show: false})}
+                     dismissible
+                  >
+                     {alert.message}
+                  </Alert>
+               )}
             </div>
             <h6>Simplified Organization, Outstanding Results.</h6>
             <h5>Plan Your Day, One Task at a Time</h5>

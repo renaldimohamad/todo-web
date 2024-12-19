@@ -16,7 +16,6 @@ export const useloginFunction = () => {
          localStorage.setItem("token", resToken.token)
          localStorage.setItem("token", resToken.token)
       } catch (error: any) {
-         console.log("🚀 ~ login ~ error:", error)
          throw new Error(error.response?.data?.message)
       }
    }
