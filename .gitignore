@@ -12,6 +12,7 @@ dist
 dist-ssr
 *.local
 .note.txt
+.env
 
 .vscode/*
 !.vscode/extensions.json
